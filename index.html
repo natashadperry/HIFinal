@@ -1,0 +1,19 @@
+<div class="login">
+    <h1> To predict brain weight in grams, please enter the following information:</h1>
+ 
+   
+    
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Gender" placeholder="Gender (1=male, 2=female)" required="required" />
+        <input type="text" name="Age Range" placeholder="Age Range (1 or 2)" required="required" />
+        <input type="text" name="Head Size in cm3" placeholder="Head Size in cm3" required="required" />
+        <button type ="submit" class"btn btn-primary btn-block btn-large">Predict</button>
+        
+    </form>
+    
+ <img src="{{url_for('static',
+        filename='phrenology.jpeg')}}" />
+    <br>
+    <br>
+    {{ prediction_text }}
+        
